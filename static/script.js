@@ -1,5 +1,6 @@
+
 // This file contains the JavaScript code for the website.
-  // Step 4: Easter Eggs
+// Easter Eggs
   document.addEventListener('DOMContentLoaded', () => {
     // Modal Logic
     const modalTriggers = document.querySelectorAll('.modal-trigger');
@@ -47,4 +48,4 @@
       }
     });
   });
-
+  
