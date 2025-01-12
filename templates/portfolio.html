@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="./static/style.css">
+  <link rel=""stylesheet" href="./static/mediaqueries.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">My Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section id="portfolio">
+    <h1 class="title">My Portfolio</h1>
+    <div class="portfolio-list">
+      <div class="portfolio-item">
+        <img src="./static/project-1.jpg" alt="Project 1" class="portfolio-image">
+        <h2>Project Title 1</h2>
+        <button class="modal-trigger" data-modal="modal1">View More</button>
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h3>Project Title 1</h3>
+            <p>Description of the project goes here. Include details like features, technologies used, and goals.</p>
+            <button class="close-modal" data-modal="modal1">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="./static/project-2.jpg" alt="Project 2" class="portfolio-image">
+        <h2>Project Title 2</h2>
+        <button class="modal-trigger" data-modal="modal2">View More</button>
+        <div id="modal2" class="modal">
+          <div class="modal-content">
+            <h3>Project Title 2</h3>
+            <p>Description of the project goes here. Include details like features, technologies used, and goals.</p>
+            <button class="close-modal" data-modal="modal2">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="./static/project-3.png" alt="Project 3" class="portfolio-image">
+        <h2>Project Title 3</h2>
+        <button class="modal-trigger" data-modal="modal3">View More</button>
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <h3>Project Title 3</h3>
+            <p>Description of the project goes here. Include details like features, technologies used, and goals.</p>
+            <button class="close-modal" data-modal="modal3">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
