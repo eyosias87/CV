@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  </head>
+<body>
+  <nav>
+    <div class="logo">My Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+<main>
+  <section id="profile">
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="profilbild1.jpg" alt="Eyosias Mamo Picture" width="300" height="300" class="profile-pic"> 
+      </div>
+      <div class="section__text">
+        <h1>Welcome to My Portfolio</h1>
+        <p class="job-title">Fullstackutvecklare.</p>
+        <p class="section__text__p1">Hi! I'm Eyosias Mamo.</p>
+        <p class="section__text__p2">Explore my CV, projects, and more.</p>
+        <div class="btn-container">
+          <button class="btn btn-color-1">Learn More</button>
+          <button class="btn btn-color-2">Contact Me</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
+    <section id="learn-more">
+      <h2>Learn More</h2>
+      <p>Welcome to the "Learn More" section! Here, you'll discover detailed insights into my journey, skills, and expertise in full-stack development. Whether you're exploring my backend capabilities or my proficiency in building intuitive user interfaces, you'll find a comprehensive view of my work and achievements.</p>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact-me">
+      <h2>Contact Me</h2>
+      <p>If you'd like to get in touch, feel free to use the contact form below or connect with me through my social media channels.</p>
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>
