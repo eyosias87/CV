@@ -1,6 +1,62 @@
 // This file contains the JavaScript code for the website.
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Login Form Logic
+  const loginForm = document.getElementById('login-form');
+  const navLinks = document.getElementById('nav-links');
+  const logoutButton = document.getElementById('logout-button');
+
+  // Hide navigation links initially
+  if (navLinks) {
+    navLinks.style.display = 'none';
+  }
+
+  // Check if user is already logged in
+  if (localStorage.getItem('isLoggedIn') === 'true') {
+    if (navLinks) {
+      navLinks.style.display = 'flex';
+    }
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Hardcoded list of valid users
+      const validUsers = [
+        { email: 'eyosias87@gmail.com', password: 'yizench204364' },
+        { email: 'yizench8@gmail.com', password: 'yizench2024' },
+        { email: 'eyosiasmamo@upplandsvasby.se', password: 'eyosias1234' }
+      ];
+
+      // Check if the entered email and password match any valid user
+      const isValidUser = validUsers.some(user => user.email === email && user.password === password);
+
+      if (isValidUser) {
+        alert('Login successful!');
+        localStorage.setItem('isLoggedIn', 'true'); // Set login status in local storage
+        if (navLinks) {
+          navLinks.style.display = 'flex';
+        }
+        window.location.href = 'index.html'; // Redirect to home page
+      } else {
+        alert('Invalid email or password');
+      }
+    });
+  }
+
+  // Logout Logic
+  if (logoutButton) {
+    logoutButton.addEventListener('click', () => {
+      localStorage.removeItem('isLoggedIn'); // Remove login status from local storage
+      alert('You have been logged out.');
+      window.location.href = 'login.html'; // Redirect to login page
+    });
+  }
+
   // Function to show the Learn More section and hide the Contact Me section
   function showLearnMore() {
     document.getElementById('learn-more').style.display = 'block';

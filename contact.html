@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
+  <title>Contact Me</title>
   <link rel="stylesheet" href="styles.css">
-  
- </head>
+  <script defer src="script.js"></script>
+</head>
+
 <body>
-  <nav>
-    <div class="logo">My Portfolio</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">My Portfolio</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><button id="logout-button">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
 
-  <section id="contact">
-    <h1>Contact Me</h1>
-    <p>If you have any questions, feel free to reach out via the form below:</p>
+  <main>
+    <section id="contact">
+      <h1>Contact Me</h1>
+      <p>If you have any questions, feel free to reach out via the form below:</p>
 
-    <form id="contact-form" action="submit_form.php" method="POST">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-      </div>
-      <div class="form-group">
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" placeholder="Subject">
-      </div>
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-      </div>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- Replace with your Access Key -->
+        <input type="hidden" name="access_key" value="3b5f085f-fe11-46f8-963d-5b4e4ad7ded1">
+
+        <!-- Form Inputs. Each input must have a name="" attribute -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required autocomplete="off"></textarea>
+        </div>
+
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <!-- Custom Confirmation / Success Page -->
+        <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+        <button type="submit">Submit Form</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
   </footer>
+</body>
+
+</html>

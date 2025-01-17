@@ -1,3 +1,44 @@
+/* Login Page Styles */
+#login {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
 /* General Styles */
 html, body {
   height: 100%;
@@ -16,11 +57,36 @@ body {
 
 main {
   flex: 1;
+  padding: 20px;
 }
 
-h1 {
+p, li {
+  line-height: 1.6;
+}
+
+h1, h2 {
   text-align: center;
   margin: 20px 0;
+}
+
+/* Section Container */
+.section-container {
+  max-width: 800px; /* Set a maximum width for consistency */
+  margin: 0 auto 20px auto; /* Center align and add bottom margin */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.section-container ul {
+  list-style: square;
+  padding: 0;
+  text-align: left;
+}
+
+.section-container ul li {
+  margin-bottom: 10px;
 }
 
 /* Navigation */
@@ -31,7 +97,7 @@ nav {
   align-items: center;
   padding: 10px 20px;
   background-color: #333;
-  color: white;
+  color: yellow;
 }
 
 .nav-links {
@@ -72,7 +138,7 @@ nav {
 }
 
 /* Profile Section */
-.section-container {
+.profile-section-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -148,20 +214,31 @@ nav {
 }
 
 /* About Section */
-#about {
-  max-width: 800px;
-  margin: 0 auto;
+.about-section-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
 }
 
-#about img {
-  max-width: 100%;
+.about-pic {
+  width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-#about p {
-  line-height: 1.8;
+#socials-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
 }
 
 /* CV Section */
@@ -171,7 +248,7 @@ nav {
   padding: 20px;
 }
 
-.section-container {
+.cv-section-container {
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -179,16 +256,17 @@ nav {
   background-color: #f9f9f9;
 }
 
-.section-container h2 {
+.cv-section-container h2 {
   margin-bottom: 10px;
 }
 
-.section-container ul {
-  list-style: none;
+.cv-section-container ul {
+  list-style: square;
   padding: 0;
+  text-align: left;
 }
 
-.section-container ul li {
+.cv-section-container ul li {
   margin-bottom: 10px;
 }
 
@@ -230,7 +308,7 @@ nav {
 
 /* Modal */
 .modal {
-  display: flex;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -247,7 +325,7 @@ nav {
   border-radius: 5px;
   width: 90%;
   max-width: 500px;
-  text-align: center;
+  text-align: left;
 }
 
 /* Contact Section */
@@ -257,33 +335,34 @@ nav {
   padding: 20px;
 }
 
-#contact form {
-  display: flex;
-  flex-direction: column;
+.form-group {
+  margin-bottom: 15px;
 }
 
-#contact form label {
-  margin: 10px 0 5px;
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-#contact form input,
-#contact form textarea {
+input, textarea {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
-#contact form button {
+button {
+  padding: 10px 20px;
   background-color: #333;
   color: white;
-  padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-#contact form button:hover {
+button:hover {
   background-color: #555;
 }
 
@@ -296,4 +375,5 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+  margin-top: auto;
 }

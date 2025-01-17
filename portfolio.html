@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
-  </head>
+</head>
+
 <body>
-  <nav>
-    <div class="logo">My Portfolio</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="portfolio.html" class="active">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon">
+  <header>
+    <nav>
+      <a href="index.html" class="logo">My Portfolio</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button id="logout-button">Logout</button></li>
+      </ul>
+      <div class="hamburger-menu">
         <span></span>
         <span></span>
         <span></span>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <section id="portfolio">
     <h1 class="title">My Portfolio</h1>
     <div class="portfolio-list">
       <div class="portfolio-item">
         <img src="projekt-1.png" alt="Project 1" class="portfolio-image">
-        <h2>Project Title 1</h2>
+        <h2>Bank Management System</h2>
         <button class="modal-trigger" data-modal="modal1">View More</button>
         <div id="modal1" class="modal">
           <div class="modal-content">
-            <h3>Project Title 1</h3>
-            <p>Description of the project goes here. Include details like features, technologies used, and goals.</p>
+            <h3>Bank Console App</h3>
+            <p>A simple bank management system built in C#. This application allows users to manage bank accounts, perform transactions, and transfer funds using a command-line interface. It supports features such as user account creation, deposit fund, withdraw fund, loan service, notifications, currency conversion for transfers, etc.</p>
             <button class="close-modal" data-modal="modal1">Close</button>
           </div>
         </div>
@@ -44,12 +47,25 @@
 
       <div class="portfolio-item">
         <img src="projekt-2.png" alt="Project 2" class="portfolio-image">
-        <h2>Project Title 2</h2>
+        <h2>School Administration System</h2>
         <button class="modal-trigger" data-modal="modal2">View More</button>
         <div id="modal2" class="modal">
           <div class="modal-content">
-            <h3>Project Title 2</h3>
-            <p>Description of the project goes here. Include details like features, technologies used, and goals.</p>
+            <h3>School Administration System</h3>
+            <p>This project is a comprehensive school administration system designed to meet various requirements of a school. The system includes features such as:
+              <ul>
+                <li>A menu to display different data requested by the school (Console)</li>
+                <li>An overview of all staff, including names, positions, and years of service, with the ability to add new staff (SQL in SSMS)</li>
+                <li>Storing student information, class assignments, grades for each course, and the teacher who assigned the grade, along with the date (SQL in SSMS)</li>
+                <li>Displaying the number of teachers in different departments (EF in VS)</li>
+                <li>Displaying information about all students (EF in VS)</li>
+                <li>Listing all active courses (EF in VS)</li>
+                <li>Calculating monthly salary expenses for each department (SQL in SSMS)</li>
+                <li>Calculating the average salary for different departments (SQL in SSMS)</li>
+                <li>Creating a stored procedure to return important information about a student based on their ID (SQL in SSMS)</li>
+                <li>Assigning grades to a student using transactions to ensure data integrity (SQL in SSMS)</li>
+              </ul>
+              Technologies used include SQL Server Management Studio, Visual Studio with .NET Framework, C#, and scaffolding methods. The system fulfills all the specified requirements and provides a robust solution for school administration.</p>
             <button class="close-modal" data-modal="modal2">Close</button>
           </div>
         </div>
@@ -73,7 +89,6 @@
   <footer>
     <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
+
 </html>
