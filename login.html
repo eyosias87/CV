@@ -32,6 +32,8 @@
           <label for="password">Password</label>
           <input name="password" type="password" id="password" required minlength="8" maxlength="12">
         </div>
+        <!-- Step 1: Add hCaptcha -->
+        <div class="h-captcha" data-sitekey="94e2d3c4-7dea-4dd2-b5c4-1c948d1827ee"></div>
         <button type="submit">Login</button>
       </form>
     </section>
@@ -41,6 +43,8 @@
     <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
   </footer>
 
+  <!-- Step 2: Add the hCaptcha script -->
+  <script src="https://hcaptcha.com/1/api.js" async defer></script>
   <script src="script.js"></script>
 </body>
 </html>

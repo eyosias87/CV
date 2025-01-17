@@ -20,22 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (loginForm) {
     loginForm.addEventListener('submit', (event) => {
+      const hCaptchaResponse = loginForm.querySelector('textarea[name=h-captcha-response]').value;
+
+      if (!hCaptchaResponse) {
+        event.preventDefault();
+        alert("Please complete the hCaptcha");
+        return;
+      }
+
       event.preventDefault();
 
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      // Hardcoded list of valid users
-      const validUsers = [
-        { email: 'eyosias87@gmail.com', password: 'yizench204364' },
-        { email: 'yizench8@gmail.com', password: 'yizench2024' },
-        { email: 'eyosiasmamo@upplandsvasby.se', password: 'eyosias1234' }
-      ];
-
-      // Check if the entered email and password match any valid user
-      const isValidUser = validUsers.some(user => user.email === email && user.password === password);
-
-      if (isValidUser) {
+      // Allow any email and password combination
+      if (email && password) {
         alert('Login successful!');
         localStorage.setItem('isLoggedIn', 'true'); // Set login status in local storage
         if (navLinks) {
