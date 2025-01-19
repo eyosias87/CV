@@ -32,7 +32,22 @@
           <label for="password">Password</label>
           <input name="password" type="password" id="password" required minlength="8" maxlength="12">
         </div>
-        <!-- Step 1: Add hCaptcha -->
+        <div class="form-group">
+          <label for="cv-type">Select CV Type</label>
+          <select id="cv-type" name="cvType" required>
+            <option value="developer">Fullstack Developer</option>
+            <option value="maintenanceTechnician">Maintenance Technician</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="language">Select Language</label>
+          <select id="language" name="language" required>
+            <option value="en">English</option>
+            <option value="sv">Swedish</option>
+          </select>
+        </div>
+        
         <div class="h-captcha" data-sitekey="94e2d3c4-7dea-4dd2-b5c4-1c948d1827ee"></div>
         <button type="submit">Login</button>
       </form>
@@ -41,6 +56,11 @@
 
   <footer>
     <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+    <ul class="footer-links">
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="security.html">Security</a></li>
+    </ul>
   </footer>
 
   
