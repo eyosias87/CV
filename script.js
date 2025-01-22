@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Hide navigation links if on the login page
+  if (window.location.pathname.endsWith('login.html')) {
+    if (navLinks) {
+      navLinks.style.display = 'none';
+    }
+  }
+
   if (loginForm) {
     loginForm.addEventListener('submit', (event) => {
       const hCaptchaResponse = loginForm.querySelector('textarea[name=h-captcha-response]').value;
