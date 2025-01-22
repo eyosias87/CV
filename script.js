@@ -6,22 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('nav-links');
   const logoutButton = document.getElementById('logout-button');
 
-  // Hide navigation links initially
-  if (navLinks) {
-    navLinks.style.display = 'none';
+  // Hide navigation links initially on the login page
+  if (window.location.pathname.endsWith('login.html')) {
+    if (navLinks) {
+      navLinks.style.display = 'none';
+    }
   }
 
   // Check if user is already logged in
   if (localStorage.getItem('isLoggedIn') === 'true') {
     if (navLinks) {
       navLinks.style.display = 'flex';
-    }
-  }
-
-  // Hide navigation links if on the login page
-  if (window.location.pathname.endsWith('login.html')) {
-    if (navLinks) {
-      navLinks.style.display = 'none';
     }
   }
 

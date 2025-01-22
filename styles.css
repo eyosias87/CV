@@ -18,7 +18,7 @@ label {
   font-weight: bold;
 }
 
-input {
+input, textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -33,6 +33,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -47,6 +48,7 @@ html, body {
   box-sizing: border-box;
   width: 100%;
   font-family: Arial, sans-serif;
+  filter: contrast(100%);
 }
 
 body {
@@ -79,6 +81,19 @@ h1, h2 {
   background-color: #f9f9f9;
 }
 
+p.section__text__p1, p.section__text__p2 {
+  font-size: 1.2rem;
+  font: 16px Arial, sans-serif;
+  margin-bottom: 10px; 
+  color: black; 
+}
+.section__text__p1, .section__text__p2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font: 16px Arial, sans-serif;
+  color: black; 
+}
+
 .section-container ul {
   list-style: square;
   padding: 0;
@@ -98,17 +113,25 @@ nav {
   padding: 10px 20px;
   background-color: #333;
   color: yellow;
+  width: 100%; /* Ensure it spans the full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .nav-links {
   display: flex;
   gap: 15px;
   list-style: none;
+  margin-left: auto; /* Align to the right */
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
 }
 
 .nav-links a.active {
@@ -130,6 +153,7 @@ nav {
   .nav-links {
     display: flex;
     flex-direction: column;
+    gap: 15px;
   }
 
   .nav-links.active {
@@ -190,6 +214,7 @@ nav {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 .btn-color-1 {
@@ -222,8 +247,12 @@ nav {
   padding: 20px;
 }
 
-.about-pic {
-  width: 100%;
+a.logo {
+  color: yellow;
+}
+
+img.about-pic {
+  width: 50%;
   height: auto;
   border-radius: 50%;
   object-fit: cover;
@@ -317,6 +346,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 .modal-content {
@@ -326,6 +356,8 @@ nav {
   width: 90%;
   max-width: 500px;
   text-align: left;
+  max-height: 80%; /* Limit height */
+  overflow-y: auto; /* Add scroll bar */
 }
 
 /* Contact Section */
@@ -360,6 +392,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -376,6 +409,8 @@ footer {
   bottom: 0;
   width: 100%;
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-links {
@@ -394,8 +429,19 @@ footer {
 .footer-links a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
+  color: #ffcc00;
   text-decoration: underline;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.contact-info p {
+  margin: 5px 0;
 }

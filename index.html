@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +7,25 @@
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
 </head>
-
 <body>
-  <nav>
-    <div class="logo">My Portfolio</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="cv_fullsatckdeveloper_en.html">CV</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><button id="logout-button">Logout</button></li>
-    </ul>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon">
+  <header>
+    <nav>
+      <a href="index.html" class="logo">My Portfolio</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button id="logout-button">Logout</button></li>
+      </ul>
+      <div class="hamburger-menu">
         <span></span>
         <span></span>
         <span></span>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <main>
     <section id="profile">
@@ -48,13 +46,11 @@
       </div>
     </section>
 
-    <!-- Learn More Section -->
     <section id="learn-more" style="display: none;">
       <h2>Learn More</h2>
       <p>Welcome to the "Learn More" section! Here, you'll discover detailed insights into my journey, skills, and expertise in full-stack development. Whether you're exploring my backend capabilities or my proficiency in building intuitive user interfaces, you'll find a comprehensive view of my work and achievements.</p>
     </section>
 
-    <!-- Contact Me Section -->
     <section id="contact-me" style="display: none;">
       <h2>Contact Me</h2>
       <p>If you'd like to get in touch, feel free to use the contact form below or connect with me through my social media channels.</p>
@@ -75,7 +71,17 @@
 
   <footer>
     <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+    <ul class="footer-links">
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="security.html">Security</a></li>
+    </ul>
+    <div class="contact-info">
+      <p><strong>Contact Information:</strong></p>
+      <p>Telephone: +46738061663</p>
+      <p>Email: yizench8@gmail.com</p>
+      <p>Address: 6 Ardennergatan, Upplands Väsby Stockholm, Sweden</p>
+    </div>
   </footer>
 </body>
-
 </html>
