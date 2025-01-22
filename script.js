@@ -39,19 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      const cvType = document.getElementById('cv-type').value;
-      const language = document.getElementById('language').value;
 
       // Allow any email and password combination
       if (email && password) {
         alert('Login successful!');
         localStorage.setItem('isLoggedIn', 'true'); // Set login status in local storage
-        localStorage.setItem('cvType', cvType); // Store selected CV type
-        localStorage.setItem('language', language); // Store selected language
         if (navLinks) {
           navLinks.style.display = 'flex';
         }
-        window.location.href = `cv_${cvType}_${language}.html`; // Redirect to the selected CV page
+        window.location.href = 'index.html'; // Redirect to the home page
       } else {
         alert('Invalid email or password');
       }
@@ -62,8 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (logoutButton) {
     logoutButton.addEventListener('click', () => {
       localStorage.removeItem('isLoggedIn'); // Remove login status from local storage
-      localStorage.removeItem('cvType'); // Remove CV type from local storage
-      localStorage.removeItem('language'); // Remove language from local storage
       alert('You have been logged out.');
       window.location.href = 'login.html'; // Redirect to login page
     });
