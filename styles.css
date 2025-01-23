@@ -1,45 +1,3 @@
-/* Login Page Styles */
-#login {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #555;
-}
-
 /* General Styles */
 html, body {
   height: 100%;
@@ -48,7 +6,6 @@ html, body {
   box-sizing: border-box;
   width: 100%;
   font-family: Arial, sans-serif;
-  filter: contrast(100%);
 }
 
 body {
@@ -69,39 +26,6 @@ p, li {
 h1, h2 {
   text-align: center;
   margin: 20px 0;
-}
-
-/* Section Container */
-.section-container {
-  max-width: 800px; /* Set a maximum width for consistency */
-  margin: 0 auto 20px auto; /* Center align and add bottom margin */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-p.section__text__p1, p.section__text__p2 {
-  font-size: 1.2rem;
-  font: 16px Arial, sans-serif;
-  margin-bottom: 10px; 
-  color: black; 
-}
-.section__text__p1, .section__text__p2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  font: 16px Arial, sans-serif;
-  color: black; 
-}
-
-.section-container ul {
-  list-style: square;
-  padding: 0;
-  text-align: left;
-}
-
-.section-container ul li {
-  margin-bottom: 10px;
 }
 
 /* Navigation */
@@ -144,6 +68,14 @@ nav {
   cursor: pointer;
 }
 
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
 /* Media Query for Mobile Navigation */
 @media (max-width: 768px) {
   .hamburger-menu {
@@ -151,9 +83,15 @@ nav {
   }
 
   .nav-links {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
   }
 
   .nav-links.active {
@@ -409,8 +347,9 @@ footer {
   bottom: 0;
   width: 100%;
   margin-top: auto;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Split footer content into two columns */
+  gap: 20px;
 }
 
 .footer-links {
