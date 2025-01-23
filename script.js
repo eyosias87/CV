@@ -1,18 +1,9 @@
 // This file contains the JavaScript code for the website.
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Hamburger Menu Logic
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (hamburgerMenu) {
-    hamburgerMenu.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  }
-
   // Login Form Logic
   const loginForm = document.getElementById('login-form');
+  const navLinks = document.getElementById('nav-links');
   const logoutButton = document.getElementById('logout-button');
 
   // Hide navigation links initially on the login page
