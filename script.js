@@ -14,27 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('login-form');
   const logoutButton = document.getElementById('logout-button');
 
+  // Check if user is already logged in
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const currentPage = window.location.pathname.split('/').pop();
+
+  if (!isLoggedIn && currentPage !== 'login.html') {
+    // Redirect to login page if not logged in and not already on the login page
+    window.location.href = 'login.html';
+    return; // Prevent further script execution
+  }
+
   // Hide navigation links and logo on the login page
-  if (window.location.pathname.endsWith('login.html')) {
+  if (currentPage === 'login.html') {
     if (navLinks) {
       navLinks.style.display = 'none';
     }
     if (logo) {
       logo.style.pointerEvents = 'none'; // Disable clicking on the logo
     }
-  }
-
-  // Check if user is already logged in
-  if (localStorage.getItem('isLoggedIn') === 'true') {
-    if (navLinks) {
-      navLinks.style.display = 'flex';
-    }
   } else {
-    // Redirect to login page if not logged in and trying to access protected pages
-    const protectedPages = ['portfolio.html', 'index.html', 'about.html', 'cv.html', 'contact.html'];
-    const currentPage = window.location.pathname.split('/').pop();
-    if (protectedPages.includes(currentPage)) {
-      window.location.href = 'login.html';
+    // Show navigation links if logged in
+    if (isLoggedIn && navLinks) {
+      navLinks.style.display = 'flex';
     }
   }
 
