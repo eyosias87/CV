@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.removeItem('isLoggedIn'); // Remove login status from local storage
       alert('You have been logged out.');
       window.location.href = 'login.html'; // Redirect to login page
+      history.pushState(null, null, 'login.html'); // Manipulate history to prevent back navigation
     });
   }
 
@@ -141,4 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'login.html';
     }
   });
+
+  // Redirect to login page if not logged in and trying to access portfolio page
+  if (window.location.pathname.endsWith('portfolio.html') && localStorage.getItem('isLoggedIn') !== 'true') {
+    window.location.href = 'login.html';
+  }
 });
