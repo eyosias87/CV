@@ -1,15 +1,26 @@
-// This file contains the JavaScript code for the website.
-
 document.addEventListener('DOMContentLoaded', () => {
+  // Hamburger Menu Logic
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const navLinks = document.querySelector('.nav-links');
+  const logo = document.querySelector('.logo');
+
+  if (hamburgerMenu) {
+    hamburgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
   // Login Form Logic
   const loginForm = document.getElementById('login-form');
-  const navLinks = document.getElementById('nav-links');
   const logoutButton = document.getElementById('logout-button');
 
-  // Hide navigation links initially on the login page
+  // Hide navigation links and logo on the login page
   if (window.location.pathname.endsWith('login.html')) {
     if (navLinks) {
       navLinks.style.display = 'none';
+    }
+    if (logo) {
+      logo.style.pointerEvents = 'none'; // Disable clicking on the logo
     }
   }
 
@@ -17,6 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('isLoggedIn') === 'true') {
     if (navLinks) {
       navLinks.style.display = 'flex';
+    }
+  } else {
+    // Redirect to login page if not logged in and trying to access protected pages
+    const protectedPages = ['portfolio.html', 'index.html', 'about.html', 'cv.html', 'contact.html'];
+    const currentPage = window.location.pathname.split('/').pop();
+    if (protectedPages.includes(currentPage)) {
+      window.location.href = 'login.html';
     }
   }
 
@@ -39,9 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (email && password) {
         alert('Login successful!');
         localStorage.setItem('isLoggedIn', 'true'); // Set login status in local storage
-        if (navLinks) {
-          navLinks.style.display = 'flex';
-        }
         window.location.href = 'index.html'; // Redirect to the home page
       } else {
         alert('Invalid email or password');
@@ -117,6 +132,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (keySequence.endsWith(easterEggCode)) {
       alert('Easter Egg Activated! You are awesome!');
       keySequence = '';
+    }
+  });
+
+  // Prevent navigating back to protected pages after logout
+  window.addEventListener('popstate', () => {
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = 'login.html';
     }
   });
 });
